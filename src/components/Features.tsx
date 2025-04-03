@@ -4,22 +4,22 @@ import { Shield, Factory, Award, PenTool as Tool } from 'lucide-react';
 const Features = () => {
   const features = [
     {
-      icon: <Shield className="h-6 w-6 text-blue-600" />,
+      icon: <Shield className="h-6 w-6 text-[#008fc9]" />,
       title: 'Quality Assured',
       description: 'ISO 9001:2015 certified manufacturing processes ensuring highest quality standards',
     },
     {
-      icon: <Factory className="h-6 w-6 text-blue-600" />,
+      icon: <Factory className="h-6 w-6 text-[#008fc9]" />,
       title: 'State-of-the-art Facilities',
       description: 'Modern manufacturing plants equipped with latest technology',
     },
     {
-      icon: <Award className="h-6 w-6 text-blue-600" />,
+      icon: <Award className="h-6 w-6 text-[#008fc9]" />,
       title: 'Industry Leading',
       description: 'Over 25 years of excellence in automotive component manufacturing',
     },
     {
-      icon: <Tool className="h-6 w-6 text-blue-600" />,
+      icon: <Tool className="h-6 w-6 text-[#008fc9]" />,
       title: 'Custom Solutions',
       description: 'Tailored engineering solutions meeting specific client requirements',
     },
@@ -29,7 +29,7 @@ const Features = () => {
     <div className="py-12 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
-          <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Why Choose Us</h2>
+          <h2 className="text-base text-[#008fc9] font-semibold tracking-wide uppercase">Why Choose Us</h2>
           <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
             Excellence in Manufacturing
           </p>
