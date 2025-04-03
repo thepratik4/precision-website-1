@@ -6,7 +6,7 @@ const Features = () => {
     {
       icon: <Shield className="h-6 w-6 text-[#008fc9]" />,
       title: 'Quality Assured',
-      description: 'ISO 9001:2015 certified manufacturing processes ensuring highest quality standards',
+      description: 'IATF 16949:2016  certified manufacturing processes ensuring highest quality standards',
     },
     {
       icon: <Factory className="h-6 w-6 text-[#008fc9]" />,
@@ -29,7 +29,7 @@ const Features = () => {
     <div className="py-12 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
-          <h2 className="text-base text-[#008fc9] font-semibold tracking-wide uppercase">Why Choose Us</h2>
+         
           <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
             Excellence in Manufacturing
           </p>

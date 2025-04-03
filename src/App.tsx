@@ -1,7 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import AchievementSection from './components/AchievementSection';
 import Features from './components/Features';
+import Customers from './components/Customers';
 import ProductGallery from './components/ProductGallery';
 import ContactForm from './components/ContactForm';
 import Products from './components/Products';
@@ -31,7 +33,9 @@ function App() {
           <Route path="/" element={
             <>
               <Hero />
+              <AchievementSection />
               <Features />
+              <Customers />
               <ProductGallery />
               <ContactForm />
             </>
