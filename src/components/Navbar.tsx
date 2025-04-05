@@ -8,7 +8,6 @@ const Navbar = () => {
   const [visible, setVisible] = useState(true);
   const prevScrollPos = useRef(window.pageYOffset);
 
-  // Define explicit routes for each nav item
   const navItems = {
     'About Us': {
       'History': '/history',
@@ -32,17 +31,10 @@ const Navbar = () => {
     setActiveDropdown(activeDropdown === key ? null : key);
   };
 
-  // Scroll event listener to hide/show navbar
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
-      if (prevScrollPos.current > currentScrollPos) {
-        // Scrolling up
-        setVisible(true);
-      } else {
-        // Scrolling down
-        setVisible(false);
-      }
+      setVisible(prevScrollPos.current > currentScrollPos || currentScrollPos < 10);
       prevScrollPos.current = currentScrollPos;
     };
 
@@ -58,7 +50,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
               <img
-                src="src/Public/precision_logo.png" // Update this path to your actual logo
+                src="src/Public/precision_logo.png"
                 alt="Precision Auto Group Logo"
                 className="h-12 w-auto mr-3"
               />
@@ -73,6 +65,7 @@ const Navbar = () => {
             <Link to="/" className="text-gray-700 hover:text-[#00adef] px-3 py-2 rounded-md text-sm font-medium">
               Home
             </Link>
+            
             {Object.entries(navItems).map(([key, items]) => (
               <div key={key} className="relative group">
                 <button
@@ -89,6 +82,7 @@ const Navbar = () => {
                         <Link
                           key={item}
                           to={path}
+                          onClick={() => setActiveDropdown(null)}
                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         >
                           {item}
@@ -99,12 +93,13 @@ const Navbar = () => {
                 )}
               </div>
             ))}
+            
             <Link to="/contact" className="text-gray-700 hover:text-[#00adef] px-3 py-2 rounded-md text-sm font-medium">
               Contact Us
             </Link>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -116,16 +111,18 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <Link
               to="/"
+              onClick={() => setIsOpen(false)}
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
             >
               Home
             </Link>
+            
             {Object.entries(navItems).map(([key, items]) => (
               <div key={key}>
                 <button
@@ -140,6 +137,10 @@ const Navbar = () => {
                       <Link
                         key={item}
                         to={path}
+                        onClick={() => {
+                          setActiveDropdown(null);
+                          setIsOpen(false);
+                        }}
                         className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50"
                       >
                         {item}
@@ -149,8 +150,10 @@ const Navbar = () => {
                 )}
               </div>
             ))}
+            
             <Link
               to="/contact"
+              onClick={() => setIsOpen(false)}
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
             >
               Contact Us
