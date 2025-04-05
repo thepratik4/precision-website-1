@@ -83,7 +83,7 @@ const AchievementSection = () => {
                 <div className="flex items-center gap-4">
                   <Calendar className="h-8 w-8 text-[#00adef]" />
                   <div>
-                    <div className="text-3xl font-bold text-gray-800">25+</div>
+                    <div className="text-3xl font-bold text-gray-800">30+</div>
                     <div className="text-sm text-gray-600">Years Experience</div>
                   </div>
                 </div>
@@ -117,7 +117,7 @@ const AchievementSection = () => {
                 <div className="flex items-center gap-3">
                   <Fuel className="h-6 w-6 text-[#00adef]" />
                   <div>
-                    <div className="text-sm font-semibold text-gray-800">Est. 1996</div>
+                    <div className="text-sm font-semibold text-gray-800">Est. 1991</div>
                     <div className="text-xs text-gray-600">Pioneers in Automotive Manufacturing</div>
                   </div>
                 </div>
