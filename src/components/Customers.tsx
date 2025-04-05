@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BadgeCheck } from 'lucide-react';
-import MahindraLogo from '../Public/logos/mahindra.png';
+import MahindraLogo from '../Public/logos/mahindra-sport.png';
 import ForceMotorsLogo from '../Public/logos/force-motors.png';
 import RaychemLogo from '../Public/logos/raychem.png';
 import CIEIndiaLogo from '../Public/logos/cie-india2.png';

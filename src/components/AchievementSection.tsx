@@ -54,10 +54,10 @@ const AchievementSection = () => {
                 </div>
               </div>
               <div className="border-t pt-6">
-                <p className="text-lg text-gray-700">
-                  <span className="font-semibold text-[#008fc9]">Trusted Partner</span> of<br />
-                  Mahindra & Mahindra since 1996
-                </p>
+              <p className="text-lg text-gray-700">
+               <span className="font-semibold text-[#008fc9]">Trusted Partner</span> of<br />
+               <span className="font-bold" style={{ color: '#E5223E' }}>Mahindra & Mahindra</span> since 1996
+              </p>
               </div>
             </motion.div>
 
