@@ -37,15 +37,14 @@ const Certification = () => {
       validUntil: "2024",
       imagePlaceholder:
         "https://images.unsplash.com/photo-1493612276216-ee3925520721?auto=format&fit=crop&q=80&w=800&h=600",
-      // No certificateImage for MSES Level B
       certificateImage: "src/public/certificates/MSES.png"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
-      {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-[#00adef] to-[#0066ab] py-20 px-4">
+    <div className="h-screen bg-gradient-to-b from-gray-50 to-gray-100 overflow-hidden">
+      {/* Hero Section - Reduced height and padding */}
+      <div className="relative bg-gradient-to-r from-[#00adef] to-[#0066ab] py-6 px-4">
         <div
           className="absolute inset-0 opacity-10"
           style={{
@@ -55,14 +54,14 @@ const Certification = () => {
         />
         <div className="max-w-7xl mx-auto text-center relative">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-2xl md:text-3xl font-bold text-white mb-2">
               Our Certifications
             </h1>
-            <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
+            <p className="text-sm md:text-base text-white/90 max-w-3xl mx-auto">
               Recognized excellence through international standards and industry certifications
             </p>
           </motion.div>
@@ -70,41 +69,41 @@ const Certification = () => {
       </div>
 
       {/* Certificates Grid */}
-      <div className="max-w-7xl mx-auto px-4 py-16 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto px-4 py-4 md:py-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {certificates.map((cert, index) => (
             <motion.div
               key={cert.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-200"
             >
               {/* Top Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-40 overflow-hidden">
                 <img
                   src={cert.imagePlaceholder}
                   alt={cert.title}
-                  className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <p className="text-white/80 text-sm font-medium">
+                <div className="absolute bottom-2 left-2 right-2">
+                  <p className="text-white/80 text-xs font-medium">
                     {cert.category}
                   </p>
-                  <h3 className="text-white text-xl font-bold mt-1">
+                  <h3 className="text-white text-lg font-bold mt-1">
                     {cert.title}
                   </h3>
                 </div>
               </div>
 
               {/* Details */}
-              <div className="p-6">
-                <p className="text-gray-700">{cert.description}</p>
+              <div className="p-4">
+                <p className="text-gray-700 text-sm">{cert.description}</p>
 
                 {/* Individual Certificate Image - Render only if exists */}
                 {cert.certificateImage && (
-                  <div className="mt-6 border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
+                  <div className="mt-4 border border-dashed border-gray-300 rounded-lg p-2 text-center">
                     <img
                       src={cert.certificateImage}
                       alt={`${cert.title} Certificate`}
