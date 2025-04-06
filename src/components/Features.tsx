@@ -16,7 +16,7 @@ const Features = () => {
     {
       icon: <Award className="h-6 w-6 text-[#008fc9]" />,
       title: 'Industry Leading',
-      description: 'Over 25 years of excellence in automotive component manufacturing',
+      description: 'Over 30 years of excellence in automotive component manufacturing',
     },
     {
       icon: <Tool className="h-6 w-6 text-[#008fc9]" />,

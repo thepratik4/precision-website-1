@@ -62,10 +62,6 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link to="/" className="text-gray-700 hover:text-[#00adef] px-3 py-2 rounded-md text-sm font-medium">
-              Home
-            </Link>
-            
             {Object.entries(navItems).map(([key, items]) => (
               <div key={key} className="relative group">
                 <button
@@ -115,14 +111,6 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <Link
-              to="/"
-              onClick={() => setIsOpen(false)}
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
-            >
-              Home
-            </Link>
-            
             {Object.entries(navItems).map(([key, items]) => (
               <div key={key}>
                 <button

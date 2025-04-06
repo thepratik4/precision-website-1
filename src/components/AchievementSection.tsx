@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Fuel, Factory, Calendar, Award } from 'lucide-react';
-import FuelT from '../Public/achievement section/fueltank.jpg';
+import FuelT from '../Public/achievement section/haridwar.png';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },

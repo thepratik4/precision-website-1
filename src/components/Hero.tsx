@@ -1,48 +1,222 @@
-import React from 'react';
-import { Shield, Factory, Award } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Hero = () => {
+  const slides = [
+    {
+      id: 1,
+      title: "Precision Engineering",
+      subtitle: "For Automotive Excellence",
+      description:
+        "Leading manufacturer of fuel tanks and sheet metal components, delivering quality and innovation to the automotive industry.",
+      image: "src/public/hero section/thar-night4.jpeg",
+    },
+    {
+      id: 2,
+      title: "Innovation & Quality",
+      subtitle: "Setting New Standards",
+      description:
+        "State-of-the-art manufacturing facilities equipped with the latest technology for superior product quality.",
+      image: "src/public/hero section/roboticwelding.webp",
+    },
+    {
+      id: 3,
+      title: "Global Excellence",
+      subtitle: "Trusted by Industry Leaders",
+      description:
+        "Serving major automotive manufacturers with precision-engineered components and innovative solutions.",
+      image: "",
+    },
+    {
+      id: 4,
+      title: "Sustainable Solutions",
+      subtitle: "Eco-Friendly Manufacturing",
+      description:
+        "Committed to environmentally responsible production processes and sustainable automotive solutions.",
+      image: "src/public/hero section/trees.jpg",
+    },
+  ];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [direction, setDirection] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 6000);
+    
+    return () => clearInterval(interval);
+  }, [currentSlide]);
+
+  const nextSlide = () => {
+    setDirection(1);
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setDirection(-1);
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  const slideVariants = {
+    enter: (direction) => ({
+      scale: direction > 0 ? 1.1 : 0.9,
+      opacity: 0,
+      zIndex: 0,
+    }),
+    center: {
+      scale: 1,
+      opacity: 1,
+      zIndex: 1,
+      transition: {
+        opacity: { duration: 0.8, ease: "easeOut" },
+        scale: { duration: 1, ease: "easeOut" },
+      },
+    },
+    exit: (direction) => ({
+      scale: direction < 0 ? 1.1 : 0.9,
+      opacity: 0,
+      zIndex: 0,
+      transition: {
+        opacity: { duration: 0.5, ease: "easeOut" },
+        scale: { duration: 0.7, ease: "easeOut" },
+      },
+    }),
+  };
+
+  const titleVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.2 },
+    },
+  };
+
+  const subtitleVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.4 },
+    },
+  };
+
+  const descriptionVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.6 },
+    },
+  };
+
   return (
-    <div className="relative bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-          <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-            <div className="sm:text-center lg:text-left">
-              <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                <span className="block">Precision Engineering</span>
-                <span className="block text-[#00adef]">For Automotive Excellence</span>
-              </h1>
-              <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                Leading manufacturer of fuel tanks and sheet metal components, delivering quality and innovation to the automotive industry.
-              </p>
-              <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                <div className="rounded-md shadow">
-                  <a
-                    href="/products"
-                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#00adef] hover:bg-[#008fc9] md:py-4 md:text-lg md:px-10"
-                  >
-                    View Products
-                  </a>
-                </div>
-                <div className="mt-3 sm:mt-0 sm:ml-3">
-                  <a
-                    href="/contact"
-                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-[#00adef] bg-blue-100 hover:bg-blue-200 md:py-4 md:text-lg md:px-10"
-                  >
-                    Contact Us
-                  </a>
-                </div>
+    <div className="relative h-[90vh] overflow-hidden bg-gray-900">
+      <AnimatePresence mode="wait" custom={direction}>
+        <motion.div
+          key={currentSlide}
+          custom={direction}
+          variants={slideVariants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          className="absolute inset-0"
+        >
+          {/* Image with darker overlay for better text visibility */}
+          <div className="absolute inset-0">
+            <img
+              src={slides[currentSlide].image}
+              alt={slides[currentSlide].title}
+              className="w-full h-full object-cover"
+            />
+            {/* Stronger gradient overlay for better text contrast */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+          </div>
+          
+          {/* Content */}
+          <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center h-full">
+              <div className="max-w-2xl text-white space-y-4">
+                <motion.h1 
+                  variants={titleVariants}
+                  initial="hidden"
+                  animate="visible"
+                  className="text-4xl sm:text-5xl md:text-6xl font-bold text-white"
+                >
+                  {slides[currentSlide].title}
+                </motion.h1>
+                
+                <motion.span 
+                  variants={subtitleVariants}
+                  initial="hidden"
+                  animate="visible"
+                  className="block text-3xl sm:text-4xl font-semibold text-[#00adef]"
+                >
+                  {slides[currentSlide].subtitle}
+                </motion.span>
+                
+                <motion.p 
+                  variants={descriptionVariants}
+                  initial="hidden"
+                  animate="visible"
+                  className="text-lg sm:text-xl text-white/90 max-w-lg"
+                >
+                  {slides[currentSlide].description}
+                </motion.p>
               </div>
             </div>
-          </main>
+          </div>
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Bottom footer content - Progress indicators and navigation buttons */}
+      <div className="absolute bottom-0 left-0 right-0 flex justify-between items-center p-5 z-20">
+        {/* Slide indicators */}
+        <div className="flex space-x-3">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => {
+                setDirection(index > currentSlide ? 1 : -1);
+                setCurrentSlide(index);
+              }}
+              className="group relative"
+            >
+              <div className="w-12 h-1.5 bg-white/40 rounded-full overflow-hidden">
+                {index === currentSlide && (
+                  <motion.div
+                    initial={{ width: "0%" }}
+                    animate={{ width: "100%" }}
+                    transition={{ duration: 6, ease: "linear" }}
+                    className="absolute left-0 top-0 h-full bg-white rounded-full"
+                  />
+                )}
+              </div>
+            </button>
+          ))}
         </div>
-      </div>
-      <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <img
-          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-          src="src/public/hero section/haridwar.png"
-          alt="Manufacturing facility"
-        />
+        
+        {/* Navigation buttons */}
+        <div className="flex space-x-2">
+          <motion.button
+            onClick={prevSlide}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="w-10 h-10 flex items-center justify-center rounded-sm bg-[#00adef] text-white"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </motion.button>
+          <motion.button
+            onClick={nextSlide}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="w-10 h-10 flex items-center justify-center rounded-sm bg-[#00adef] text-white"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </motion.button>
+        </div>
       </div>
     </div>
   );
