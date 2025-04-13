@@ -9,26 +9,22 @@ const Navbar = () => {
   const prevScrollPos = useRef(window.pageYOffset);
 
   const navItems = {
-    'About Us': {
-      'History': '/history',
-      'Vision': '/vision',
-      'Values': '/values',
-      'Certifications': '/certification'
+    'ABOUT US': {
+      'HISTORY': '/history',
+      'VISION': '/vision',
+      'VALUES': '/values',
+      'CERTIFICATIONS': '/certification'
     },
-    'Products & Services': {
-      'Fuel Tanks': '/fuel_tanks',
-      'Battery Boxes': '/battery_boxes',
-      'Sheet Metal Parts': '/sheet_metal_parts'
+    'PRODUCTS & SERVICES': {
+      'FUEL TANKS': '/fuel_tanks',
+      'BATTERY BOXES': '/battery_boxes',
+      'SHEET METAL PARTS': '/sheet_metal_parts'
     },
-    'Manufacturing & Locations': {
-      'Capabilities': '/capabilities',
-      'Quality': '/quality',
-      'Plant Locations': '/location'
+    'MANUFACTURING & LOCATIONS': {
+      'CAPABILITIES': '/capabilities',
+      'QUALITY': '/quality',
+      'PLANT LOCATION': '/location'
     }
-  };
-
-  const toggleDropdown = (key: string) => {
-    setActiveDropdown(activeDropdown === key ? null : key);
   };
 
   useEffect(() => {
@@ -43,63 +39,68 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`bg-white shadow-lg fixed w-full z-50 transition-transform duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
+    <nav className={`bg-white/80 backdrop-blur-lg shadow-lg fixed w-full z-50 transition-all duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between h-16">
-          {/* Logo Section */}
+          {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0 flex items-center">
+            <Link to="/" className="flex-shrink-0 flex items-center group">
               <img
-                src="src/Public/precision_logo.png"
+                src="/src/public/precision_logo.png" // Changed to public path
                 alt="Precision Auto Group Logo"
-                className="h-12 w-auto mr-3"
+                className="h-12 w-auto mr-2 transition-transform duration-300 group-hover:scale-105"
               />
-              <span className="text-2xl font-bold text-[#00adef] hidden md:block">
+              <span className="text-xl font-bold bg-gradient-to-r from-[#00adef] to-[#0088cc] bg-clip-text text-transparent hidden md:block transition-all duration-300 group-hover:scale-105">
                 Precision Auto Group
               </span>
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center space-x-6">
             {Object.entries(navItems).map(([key, items]) => (
-              <div key={key} className="relative group">
-                <button
-                  onClick={() => toggleDropdown(key)}
-                  className="text-gray-700 hover:text-[#00adef] px-3 py-2 rounded-md text-sm font-medium inline-flex items-center"
-                >
-                  {key}
-                  <ChevronDown className="ml-1 h-4 w-4" />
+              <div 
+                key={key} 
+                className="relative group"
+                onMouseEnter={() => setActiveDropdown(key)}
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
+                <button className="text-gray-700 hover:text-[#00adef] px-2 py-1 rounded-md text-sm font-medium transition-colors duration-200 flex items-center">
+                  <span>{key}</span>
+                  <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${activeDropdown === key ? 'rotate-180' : ''}`} />
                 </button>
-                {activeDropdown === key && (
-                  <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-                    <div className="py-1">
+                <div className={`absolute left-1/2 -translate-x-1/2 mt-2 w-56 transition-all duration-300 ${activeDropdown === key ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'}`}>
+                  <div className="relative top-0">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-4 h-4 bg-white rotate-45" />
+                    <div className="relative bg-white rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 p-2">
                       {Object.entries(items).map(([item, path]) => (
                         <Link
                           key={item}
                           to={path}
-                          onClick={() => setActiveDropdown(null)}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#00adef]/10 hover:text-[#00adef] rounded-lg transition-colors duration-150"
                         >
                           {item}
                         </Link>
                       ))}
                     </div>
                   </div>
-                )}
+                </div>
               </div>
             ))}
-            
-            <Link to="/contact" className="text-gray-700 hover:text-[#00adef] px-3 py-2 rounded-md text-sm font-medium">
-              Contact Us
+
+            <Link 
+              to="/contact" 
+              className="text-gray-700 hover:text-[#00adef] px-2 py-1 rounded-md text-sm font-medium transition-colors duration-200"
+            >
+              CONTACT US
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Icon */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-[#6ec9ec] focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-[#00adef] focus:outline-none transition-colors duration-200"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -108,47 +109,43 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            {Object.entries(navItems).map(([key, items]) => (
-              <div key={key}>
-                <button
-                  onClick={() => toggleDropdown(key)}
-                  className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
-                >
+      <div className={`md:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'} overflow-hidden bg-white/95 backdrop-blur-lg`}>
+        <div className="px-4 pt-2 pb-3 space-y-2">
+          {Object.entries(navItems).map(([key, items]) => (
+            <div key={key} className="space-y-1">
+              <button
+                onClick={() => setActiveDropdown(activeDropdown === key ? null : key)}
+                className="w-full text-left px-3 py-2 rounded-lg text-base font-medium text-[#00adef] hover:bg-[#00adef]/10 transition-colors duration-200"
+              >
+                <div className="flex justify-between items-center">
                   {key}
-                </button>
-                {activeDropdown === key && (
-                  <div className="pl-6">
-                    {Object.entries(items).map(([item, path]) => (
-                      <Link
-                        key={item}
-                        to={path}
-                        onClick={() => {
-                          setActiveDropdown(null);
-                          setIsOpen(false);
-                        }}
-                        className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-gray-50"
-                      >
-                        {item}
-                      </Link>
-                    ))}
-                  </div>
-                )}
+                  <ChevronDown className={`h-5 w-5 transition-transform ${activeDropdown === key ? 'rotate-180' : ''}`} />
+                </div>
+              </button>
+              <div className={`pl-6 space-y-1 overflow-hidden transition-all duration-300 ${activeDropdown === key ? 'max-h-96' : 'max-h-0'}`}>
+                {Object.entries(items).map(([item, path]) => (
+                  <Link
+                    key={item}
+                    to={path}
+                    onClick={() => setIsOpen(false)}
+                    className="block px-3 py-2 rounded-lg text-sm text-gray-600 hover:text-[#00adef] hover:bg-[#00adef]/10 transition-colors duration-200"
+                  >
+                    {item}
+                  </Link>
+                ))}
               </div>
-            ))}
-            
-            <Link
-              to="/contact"
-              onClick={() => setIsOpen(false)}
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
-            >
-              Contact Us
-            </Link>
-          </div>
+            </div>
+          ))}
+          
+          <Link
+            to="/contact"
+            onClick={() => setIsOpen(false)}
+            className="block px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-[#00adef] hover:bg-[#00adef]/10 transition-colors duration-200"
+          >
+            CONTACT US
+          </Link>
         </div>
-      )}
+      </div>
     </nav>
   );
 };

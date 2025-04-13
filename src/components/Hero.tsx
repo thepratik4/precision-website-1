@@ -26,7 +26,7 @@ const Hero = () => {
       subtitle: "Trusted by Industry Leaders",
       description:
         "Serving major automotive manufacturers with precision-engineered components and innovative solutions.",
-      image: "",
+      image:"src/public/hero section/scroller.png",
     },
     {
       id: 4,
@@ -44,7 +44,7 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 6000);
+    }, 10000);
     
     return () => clearInterval(interval);
   }, [currentSlide]);
@@ -189,7 +189,7 @@ const Hero = () => {
                   <motion.div
                     initial={{ width: "0%" }}
                     animate={{ width: "100%" }}
-                    transition={{ duration: 6, ease: "linear" }}
+                    transition={{ duration: 10, ease: "linear" }}
                     className="absolute left-0 top-0 h-full bg-white rounded-full"
                   />
                 )}
