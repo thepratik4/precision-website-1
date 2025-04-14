@@ -1,31 +1,13 @@
-import React, { useState } from 'react';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import React from 'react';
+import { Mail, Clock, Globe } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    message: '',
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted:', formData);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
   return (
     <div className="bg-gray-50 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Left Column - Contact Information */}
           <div>
             <h2 className="text-3xl font-extrabold text-gray-900">Contact Us</h2>
             <p className="mt-4 text-lg text-gray-500">
@@ -33,89 +15,64 @@ const ContactForm = () => {
             </p>
 
             <div className="mt-8 space-y-6">
-              <div className="flex items-center">
-                <Mail className="h-6 w-6 text-blue-600" />
-                <span className="ml-3 text-gray-500">info@precisionauto.com</span>
+              {/* Email */}
+              <div className="flex items-start">
+                <Mail className="h-6 w-6 text-blue-600 mt-1 flex-shrink-0" />
+                <div className="ml-3">
+                  <p className="text-sm font-medium text-gray-900">Email</p>
+                  <p className="text-gray-500">info@precisionauto.com</p>
+                </div>
               </div>
-              <div className="flex items-center">
-                <Phone className="h-6 w-6 text-blue-600" />
-                <span className="ml-3 text-gray-500">+1 (555) 123-4567</span>
+
+              {/* Business Hours */}
+              <div className="flex items-start">
+                <Clock className="h-6 w-6 text-blue-600 mt-1 flex-shrink-0" />
+                <div className="ml-3">
+                  <p className="text-sm font-medium text-gray-900">Business Hours</p>
+                  <div className="text-gray-500">
+                    <p>Monday to Friday: 9:00 AM – 6:00 PM</p>
+                    <p>Saturday: Closed</p>
+                    <p>Sunday: 9:00 AM – 6:00 PM</p>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center">
-                <MapPin className="h-6 w-6 text-blue-600" />
-                <span className="ml-3 text-gray-500">123 Manufacturing Drive, Industrial Park, CA 90210</span>
+
+              {/* Global Presence */}
+              <div className="flex items-start">
+                <Globe className="h-6 w-6 text-blue-600 mt-1 flex-shrink-0" />
+                <div className="ml-3">
+                  <p className="text-sm font-medium text-gray-900">Global Presence</p>
+                  <p className="text-gray-500">5 Manufacturing Plants across India</p>
+                </div>
               </div>
             </div>
           </div>
 
+          {/* Right Column - Contact CTA */}
           <div className="bg-white rounded-lg shadow-lg p-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                  required
-                />
+            <div className="space-y-8 text-center">
+              <h3 className="text-2xl font-semibold text-gray-900">
+                Contact Options
+              </h3>
+              <p className="text-gray-500 text-lg">
+                If you want to send a message or check all locations' contact details
+              </p>
+              
+              <div className="mt-6">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                >
+                  View All Locations
+                </Link>
               </div>
 
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                  required
-                />
-              </div>
-
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium text-gray-700">
-                  Company
-                </label>
-                <input
-                  type="text"
-                  name="company"
-                  id="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  id="message"
-                  rows={4}
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                  required
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-              >
-                Send Message
-              </button>
-            </form>
+              <p className="text-sm text-gray-500 mt-4">
+                For direct inquiries, please use our email.
+                <br />
+                
+              </p>
+            </div>
           </div>
         </div>
       </div>

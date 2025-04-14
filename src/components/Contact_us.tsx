@@ -5,7 +5,6 @@ interface Location {
   name: string;
   address: string;
   phone: string;
-  website?: string;
   image: string;
 }
 
@@ -20,10 +19,10 @@ const locations: Location[] = [
   {
     name: "Precision Auto Industries",
     address: "H-46, MIDC Ambad, Nashik, Maharashtra 422010",
-    website: "https://www.presscomponentsindia.com/",
+    //website: "https://www.presscomponentsindia.com/",
     phone: "02594233409",
     image:
-      "https://images.unsplash.com/photo-1565610222536-ef125c59da2e?auto=format&fit=crop&q=80&w=800",
+      "src/public/locations/ambad1.jpg",
   },
   {
     name: "Precision Forging & Stampings",
@@ -31,15 +30,27 @@ const locations: Location[] = [
       "Plot No. 25, 1/1, Satpur MIDC Rd, MIDC, Satpur Colony, Nashik, Maharashtra 422007",
     phone: "02532307081",
     image:
-      "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800",
+      "src/public/locations/ambad2.jpg",
   },
   {
     name: "Haridwar Precision Auto Pvt ltd",
     address: "Plot No.6, Setor 4, SIDCUL, Uttarakhand 249403",
     phone: "01334239130",
     image:
-      "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&q=80&w=800",
+      "src/public/locations/haridwar.png",
   },
+  {
+    name: "PRECISION AUTO INDUSTRIES PVT. LTD.",
+    address: "F129, AMBAD, NASHIK.",
+    phone: "02536629601",
+    image: "src/public/locations/ambad2.jpg",
+  },
+  {
+    name: "PRECISION AUTO COMPONENTS PVT. LTD.",
+    address: "CHAKAN, PUNE.",
+    phone: "",
+    image: "src/public/locations/chakan.png",
+  },  
 ];
 
 const plants: Plant[] = [
@@ -165,19 +176,7 @@ const ContactForm = () => {
                     </a>
                   </div>
                   
-                  {location.website && (
-                    <div className="flex items-center">
-                      <Globe className="w-5 h-5 text-blue-600" />
-                      <a 
-                        href={location.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="ml-3 text-gray-600 hover:text-blue-600"
-                      >
-                        Visit Website
-                      </a>
-                    </div>
-                  )}
+                  
                 </div>
               </div>
             </div>
@@ -203,14 +202,18 @@ const ContactForm = () => {
                   <Clock className="h-6 w-6 text-blue-600" />
                   <div className="ml-4">
                     <p className="text-sm font-medium text-gray-900">Business Hours</p>
-                    <p className="text-gray-600">Mon - Sat: 9:00 AM - 6:00 PM</p>
+                    <p className="text-gray-600">Monday to Friday: 9:00 AM – 6:00 PM</p>
+                    <p className="text-gray-600">Saturday: Closed</p>
+                    <p className="text-gray-600">Sunday: 9:00 AM – 6:00 PM
+
+</p>
                   </div>
                 </div>
                 <div className="flex items-center">
                   <Globe className="h-6 w-6 text-blue-600" />
                   <div className="ml-4">
                     <p className="text-sm font-medium text-gray-900">Global Presence</p>
-                    <p className="text-gray-600">4 Manufacturing Plants across India</p>
+                    <p className="text-gray-600">5 Manufacturing Plants across India</p>
                   </div>
                 </div>
               </div>

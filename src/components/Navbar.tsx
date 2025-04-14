@@ -12,7 +12,7 @@ const Navbar = () => {
     'ABOUT US': {
       'HISTORY': '/history',
       'VISION': '/vision',
-      'VALUES': '/values',
+      //'VALUES': '/values',
       'CERTIFICATIONS': '/certification'
     },
     'PRODUCTS & SERVICES': {
@@ -38,13 +38,23 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Helper function for handling link clicks
+  const handleLinkClick = (callback?: () => void) => {
+    window.scrollTo(0, 0);
+    if (callback) callback();
+  };
+
   return (
     <nav className={`bg-white/80 backdrop-blur-lg shadow-lg fixed w-full z-50 transition-all duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0 flex items-center group">
+            <Link 
+              to="/" 
+              onClick={() => handleLinkClick()}
+              className="flex-shrink-0 flex items-center group"
+            >
               <img
                 src="/src/public/precision_logo.png" // Changed to public path
                 alt="Precision Auto Group Logo"
@@ -77,6 +87,7 @@ const Navbar = () => {
                         <Link
                           key={item}
                           to={path}
+                          onClick={() => handleLinkClick()}
                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#00adef]/10 hover:text-[#00adef] rounded-lg transition-colors duration-150"
                         >
                           {item}
@@ -90,6 +101,7 @@ const Navbar = () => {
 
             <Link 
               to="/contact" 
+              onClick={() => handleLinkClick()}
               className="text-gray-700 hover:text-[#00adef] px-2 py-1 rounded-md text-sm font-medium transition-colors duration-200"
             >
               CONTACT US
@@ -127,7 +139,7 @@ const Navbar = () => {
                   <Link
                     key={item}
                     to={path}
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => handleLinkClick(() => setIsOpen(false))}
                     className="block px-3 py-2 rounded-lg text-sm text-gray-600 hover:text-[#00adef] hover:bg-[#00adef]/10 transition-colors duration-200"
                   >
                     {item}
@@ -139,7 +151,7 @@ const Navbar = () => {
           
           <Link
             to="/contact"
-            onClick={() => setIsOpen(false)}
+            onClick={() => handleLinkClick(() => setIsOpen(false))}
             className="block px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-[#00adef] hover:bg-[#00adef]/10 transition-colors duration-200"
           >
             CONTACT US
