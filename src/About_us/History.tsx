@@ -10,7 +10,7 @@ import imgISO16949 from '../Public/history/ISO-16949.jpg';
 import imgMahindra2006 from '../Public/history/mahindra2006.png';
 import imgXylo from '../Public/history/xylo.png';
 import imgOffice from '../Public/history/office.png';
-import imgHaridwar from '../Public/history/Haridwar.png';
+import imgHaridwar from '../Public/history/haridwar.png';
 import img2014 from '../Public/history/2014.jpg';
 import imgISO14000 from '../Public/history/iso14000.png';
 import imgRaychemRPG from '../Public/history/raychemrpg.png';
