@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import img1 from '../Public/hero section/thar-night4.jpeg';
 const Hero = () => {
   const slides = [
     {
@@ -10,7 +10,7 @@ const Hero = () => {
       subtitle: "For Automotive Excellence",
       description:
         "Leading manufacturer of fuel tanks and sheet metal components, delivering quality and innovation to the automotive industry.",
-      image: "src/Public/hero section/thar-night4.jpeg",
+      image: img1,
     },
     {
       id: 2,
