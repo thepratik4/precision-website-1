@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { Fuel, GaugeCircle, Weight } from 'lucide-react';
-import img1 from '../Public/fuel tank/Bolero_pick_up.png';
-import img2 from '../Public/fuel tank/mahindra_thar.png';
+import img1 from '../Public/fuel tank/bolero_pick_up.png';
+import img2 from '../Public/fuel tank/Mahindra_thar.png';
 import img3 from '../Public/fuel tank/scorpio_signle_cab.png';
-import img4 from '../Public/fuel tank/maxximo.png';
+import img4 from '../Public/fuel tank/Maxximo.png';
 import img5 from '../Public/fuel tank/bolero.png';
 import img6 from '../Public/fuel tank/force_gurkha.png';
 import img7 from '../Public/fuel tank/bolero_camper.png';
