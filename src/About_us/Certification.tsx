@@ -2,6 +2,11 @@ import React from 'react';
 import { Shield, Award, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 
+// Image imports
+import imgIATF2016 from '../Public/certificates/iatf2016.png';
+import imgISO14001 from '../Public/certificates/iso14000.png';
+import imgMSESLevelB from '../Public/certificates/MSES.png';
+
 const Certification = () => {
   const certificates = [
     {
@@ -14,7 +19,7 @@ const Certification = () => {
       validUntil: "2025",
       imagePlaceholder:
         "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800&h=600",
-      certificateImage: "src/Public/certificates/iatf2016.png"
+      certificateImage: imgIATF2016,
     },
     {
       id: 2,
@@ -25,7 +30,7 @@ const Certification = () => {
       validUntil: "2024",
       imagePlaceholder:
         "https://images.unsplash.com/photo-1618044733300-9472054094ee?auto=format&fit=crop&q=80&w=800&h=600",
-      certificateImage: "src/Public/certificates/iso14000.png"
+      certificateImage: imgISO14001,
     },
     {
       id: 3,
@@ -37,8 +42,8 @@ const Certification = () => {
       validUntil: "2024",
       imagePlaceholder:
         "https://images.unsplash.com/photo-1493612276216-ee3925520721?auto=format&fit=crop&q=80&w=800&h=600",
-      certificateImage: "src/Public/certificates/MSES.png"
-    }
+      certificateImage: imgMSESLevelB,
+    },
   ];
 
   return (
@@ -49,7 +54,7 @@ const Certification = () => {
           className="absolute inset-0 opacity-10"
           style={{
             backgroundImage:
-              "url('data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')"
+              "url('data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')",
           }}
         />
         <div className="max-w-7xl mx-auto text-center relative">

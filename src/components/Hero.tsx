@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import img1 from '../Public/hero section/thar-night4.jpeg';
+import img2 from '../Public/hero section/roboticwelding.webp'
+import img3 from '../Public/hero section/scroller.png'
+import img4 from '../Public/hero section/trees.jpg'
 const Hero = () => {
   const slides = [
     {
@@ -18,7 +21,7 @@ const Hero = () => {
       subtitle: "Setting New Standards",
       description:
         "State-of-the-art manufacturing facilities equipped with the latest technology for superior product quality.",
-      image: "src/Public/hero section/roboticwelding.webp",
+      image: img2,
     },
     {
       id: 3,
@@ -26,7 +29,7 @@ const Hero = () => {
       subtitle: "Trusted by Industry Leaders",
       description:
         "Serving major automotive manufacturers with precision-engineered components and innovative solutions.",
-      image:"src/Public/hero section/scroller.png",
+      image: img3,
     },
     {
       id: 4,
@@ -34,7 +37,7 @@ const Hero = () => {
       subtitle: "Eco-Friendly Manufacturing",
       description:
         "Committed to environmentally responsible production processes and sustainable automotive solutions.",
-      image: "src/Public/hero section/trees.jpg",
+      image: img4,
     },
   ];
 

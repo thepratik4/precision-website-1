@@ -2,98 +2,117 @@ import React from 'react';
 import { ArrowRight, ArrowLeft, Clock, Award, Target, Rocket } from 'lucide-react';
 import { motion } from 'framer-motion';
 
+// Image imports
+import imgHydraulicPress from '../Public/history/hydraulic_press.jpg';
+import imgArmada from '../Public/history/armada.avif';
+import imgScorpio2002 from '../Public/history/scorpio2002.png';
+import imgISO16949 from '../Public/history/ISO-16949.jpg';
+import imgMahindra2006 from '../Public/history/mahindra2006.png';
+import imgXylo from '../Public/history/xylo.png';
+import imgOffice from '../Public/history/office.png';
+import imgHaridwar from '../Public/history/Haridwar.png';
+import img2014 from '../Public/history/2014.jpg';
+import imgISO14000 from '../Public/history/iso14000.png';
+import imgRaychemRPG from '../Public/history/raychemrpg.png';
+import imgIATF2016 from '../Public/history/iatf2016.png';
+import imgBoleroFootrest from '../Public/history/bolerofootrest.png';
+import imgBatteryTreo from '../Public/history/batterytreo.png';
+import imgTharFuelTank from '../Public/history/tharfueltank.png';
+import imgPressShot2024 from '../Public/history/pressshot2024.jpg';
+import imgRoboticWelding from '../Public/history/roboticwelding.webp';
+
 const History = () => {
   const timelineEvents = [
     { 
       year: 1991,
       text: "First vendor among Nasik vendors to install hydraulic press & started manufacturing deep drawn sheet metal parts",
-      image: "src/Public/history/hydraulic_press.jpg"
+      image: imgHydraulicPress,
     },
     { 
       year: "1994-1998",
       text: "Supplied trimmed seats for CJ 500, Commander, Armada & marshal models",
-      image: "src/Public/history/armada.avif"
+      image: imgArmada,
     },
     { 
       year: 1996,
       text: "Initiated in-house manufacturing and supply of deep-drawn fuel tanks, offering a competitive advantage through a 10% price reduction compared to existing suppliers based in Mumbai and Baroda.",
-      //image: "src/public/history/scorpio2002.png"
+      // no image for this event
     },
     { 
       year: 2002,
       text: "Successfully developed Fuel Tank Assay & seat frames for Scorpio",
-      image: "src/Public/history/scorpio2002.png"
+      image: imgScorpio2002,
     },
     { 
       year: 2004,
       text: "Implemented ISO TS 16949 certification",
-      image: "src/Public/history/ISO-16949.jpg"
+      image: imgISO16949,
     },
     { 
       year: 2006,
       text: "Implemented imported aluminum silicon coated steel for fuel tank assay, reduced warranty complaints to almost zero & enhanced brand image of Mahindra Vehicles",
-      image: "src/Public/history/mahindra2006.png"
+      image: imgMahindra2006,
     },
     { 
       year: 2008,
       text: "Developed draw tooling's on our own & successfully developed Xylo Fuel tank assay",
-      image: "src/Public/history/xylo.png"
+      image: imgXylo,
     },
     { 
       year: 2012,
       text: "Started Factory at Chakan Pune to manufacturer Maxximo & Navistar Fuel Tanks",
-      image: "src/Public/history/office.png"
+      image: imgOffice,
     },
     { 
       year: 2013,
       text: "Haridwar plant commissioned to produce Bolero Fuel Tank",
-      image: "src/Public/history/Haridwar.png"
+      image: imgHaridwar,
     },
     { 
       year: 2014,
       text: "MSES - B - Level to Genext Precision Autotech Pvt Ltd",
-      image: "src/Public/history/2014.jpg"
+      image: img2014,
     },
     { 
       year: 2015,
       text: "ISO 14000 Certification to Precision Auto Industries Pvt. Ltd",
-      image: "src/Public/history/iso14000.png"
+      image: imgISO14000,
     },
     { 
       year: 2016,
       text: "Developed Deep drawn distribution box for Raychem RPG",
-      image: "src/Public/history/raychemrpg.png"
+      image: imgRaychemRPG,
     },
     { 
       year: 2017,
       text: "Implemented IATF 16949:2016 certification",
-      image: "src/Public/history/iatf2016.png"
+      image: imgIATF2016,
     },
     { 
       year: 2022,
       text: "Developed Aluminium foot step for Bolero",
-      image: "src/Public/history/bolerofootrest.png"
+      image: imgBoleroFootrest,
     },
     { 
       year: 2023,
       text: "Developed Battery box for EV – Treo",
-      image: "src/Public/history/batterytreo.png"
+      image: imgBatteryTreo,
     },
     { 
       year: 2023,
       text: "Developed Thar Fuel Tank",
-      image: "src/Public/history/tharfueltank.png"
+      image: imgTharFuelTank,
     },
     { 
       year: 2024,
       text: "Installed New Hydraulic Press 200T",
-      image: "src/Public/history/pressshot2024.jpg"
+      image: imgPressShot2024,
     },
     { 
       year: 2025,
       text: "Robotic welding setup installed\nPress Brake machine installed",
-      image: "src/Public/history/roboticwelding.webp"
-    }
+      image: imgRoboticWelding,
+    },
   ];
 
   // Animation variants

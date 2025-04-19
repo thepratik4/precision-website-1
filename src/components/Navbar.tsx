@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
-
+import img1 from '../Public/precision_logo.png';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -56,7 +56,7 @@ const Navbar = () => {
               className="flex-shrink-0 flex items-center group"
             >
               <img
-                src="/src/public/precision_logo.png" // Changed to public path
+                src={img1} // Changed to public path
                 alt="Precision Auto Group Logo"
                 className="h-12 w-auto mr-2 transition-transform duration-300 group-hover:scale-105"
               />

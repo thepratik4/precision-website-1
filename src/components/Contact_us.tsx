@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Globe, Clock } from 'lucide-react';
 
+// Image imports
+import imgAmbad1 from '../Public/locations/ambad1.jpg';
+import imgAmbad2 from '../Public/locations/ambad2.jpg';
+import imgHaridwar from '../Public/locations/haridwar.png';
+import imgChakan from '../Public/locations/chakan.png';
+
 interface Location {
   name: string;
   address: string;
@@ -19,38 +25,33 @@ const locations: Location[] = [
   {
     name: "Precision Auto Industries",
     address: "H-46, MIDC Ambad, Nashik, Maharashtra 422010",
-    //website: "https://www.presscomponentsindia.com/",
     phone: "02594233409",
-    image:
-      "src/Public/locations/ambad1.jpg",
+    image: imgAmbad1,
   },
   {
     name: "Precision Forging & Stampings",
-    address:
-      "Plot No. 25, 1/1, Satpur MIDC Rd, MIDC, Satpur Colony, Nashik, Maharashtra 422007",
+    address: "Plot No. 25, 1/1, Satpur MIDC Rd, MIDC, Satpur Colony, Nashik, Maharashtra 422007",
     phone: "02532307081",
-    image:
-      "src/Public/locations/ambad2.jpg",
+    image: imgAmbad2,
   },
   {
     name: "Haridwar Precision Auto Pvt ltd",
     address: "Plot No.6, Setor 4, SIDCUL, Uttarakhand 249403",
     phone: "01334239130",
-    image:
-      "src/Public/locations/haridwar.png",
+    image: imgHaridwar,
   },
   {
     name: "PRECISION AUTO INDUSTRIES PVT. LTD.",
     address: "F129, AMBAD, NASHIK.",
     phone: "02536629601",
-    image: "src/Public/locations/ambad2.jpg",
+    image: imgAmbad2,
   },
   {
     name: "PRECISION AUTO COMPONENTS PVT. LTD.",
     address: "CHAKAN, PUNE.",
     phone: "",
-    image: "src/Public/locations/chakan.png",
-  },  
+    image: imgChakan,
+  },
 ];
 
 const plants: Plant[] = [
@@ -79,7 +80,6 @@ const plants: Plant[] = [
     address: 'Industrial Area, Haridwar, Uttarakhand',
   },
 ];
-
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
