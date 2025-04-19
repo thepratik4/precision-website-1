@@ -5,11 +5,11 @@ import { Mail, Phone, MapPin, Globe, Clock } from 'lucide-react';
 import imgAmbad1 from '../Public/locations/ambad1.jpg';
 import imgAmbad2 from '../Public/locations/ambad2.jpg';
 import imgHaridwar from '../Public/locations/haridwar.png';
-import imgChakan from '../Public/locations/chakan.png';
+import imgChakan from '../Public/locations/Chakan.png';
 
 interface Location {
   name: string;
-  address: string;
+  address: string;  
   phone: string;
   image: string;
 }
