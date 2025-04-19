@@ -22,7 +22,7 @@ const locations: Location[] = [
     //website: "https://www.presscomponentsindia.com/",
     phone: "02594233409",
     image:
-      "src/public/locations/ambad1.jpg",
+      "src/Public/locations/ambad1.jpg",
   },
   {
     name: "Precision Forging & Stampings",
@@ -30,26 +30,26 @@ const locations: Location[] = [
       "Plot No. 25, 1/1, Satpur MIDC Rd, MIDC, Satpur Colony, Nashik, Maharashtra 422007",
     phone: "02532307081",
     image:
-      "src/public/locations/ambad2.jpg",
+      "src/Public/locations/ambad2.jpg",
   },
   {
     name: "Haridwar Precision Auto Pvt ltd",
     address: "Plot No.6, Setor 4, SIDCUL, Uttarakhand 249403",
     phone: "01334239130",
     image:
-      "src/public/locations/haridwar.png",
+      "src/Public/locations/haridwar.png",
   },
   {
     name: "PRECISION AUTO INDUSTRIES PVT. LTD.",
     address: "F129, AMBAD, NASHIK.",
     phone: "02536629601",
-    image: "src/public/locations/ambad2.jpg",
+    image: "src/Public/locations/ambad2.jpg",
   },
   {
     name: "PRECISION AUTO COMPONENTS PVT. LTD.",
     address: "CHAKAN, PUNE.",
     phone: "",
-    image: "src/public/locations/chakan.png",
+    image: "src/Public/locations/chakan.png",
   },  
 ];
 

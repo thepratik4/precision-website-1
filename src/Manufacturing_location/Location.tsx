@@ -4,7 +4,7 @@ import nashik1 from '../Public/locations/ambad1.jpg';
 import nashik2 from '../Public/locations/ambad2.jpg';
 import genext from '../Public/locations/satpur.webp';
 import pune from '../Public/locations/Chakan.png';
-import haridwar from '../Public/locations/Haridwar.png';
+import haridwar from '../Public/locations/haridwar.png';
 
 const locations = [
   {

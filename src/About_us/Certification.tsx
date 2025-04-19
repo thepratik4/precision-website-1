@@ -14,7 +14,7 @@ const Certification = () => {
       validUntil: "2025",
       imagePlaceholder:
         "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800&h=600",
-      certificateImage: "src/public/certificates/iatf2016.png"
+      certificateImage: "src/Public/certificates/iatf2016.png"
     },
     {
       id: 2,
@@ -25,7 +25,7 @@ const Certification = () => {
       validUntil: "2024",
       imagePlaceholder:
         "https://images.unsplash.com/photo-1618044733300-9472054094ee?auto=format&fit=crop&q=80&w=800&h=600",
-      certificateImage: "src/public/certificates/iso14000.png"
+      certificateImage: "src/Public/certificates/iso14000.png"
     },
     {
       id: 3,
@@ -37,7 +37,7 @@ const Certification = () => {
       validUntil: "2024",
       imagePlaceholder:
         "https://images.unsplash.com/photo-1493612276216-ee3925520721?auto=format&fit=crop&q=80&w=800&h=600",
-      certificateImage: "src/public/certificates/MSES.png"
+      certificateImage: "src/Public/certificates/MSES.png"
     }
   ];
 
