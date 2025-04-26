@@ -34,7 +34,7 @@ const Features = () => {
             Excellence in Manufacturing
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-            Delivering precision-engineered automotive components with unmatched quality and reliability.
+            Delivering precision-sheet engineered automotive components with quality and reliability.
           </p>
         </div>
 

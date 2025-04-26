@@ -85,7 +85,7 @@ const Vision = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-xl text-white/90 max-w-2xl mx-auto"
           >
-            Our Vision and Mission Fueling Innovation Since 1991
+            Our Vision and Mission Fueling Innovation Since 1990
           </motion.p>
         </div>
       </div>

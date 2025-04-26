@@ -18,7 +18,8 @@ const Navbar = () => {
     'PRODUCTS & SERVICES': {
       'FUEL TANKS': '/fuel_tanks',
       'BATTERY BOXES': '/battery_boxes',
-      'SHEET METAL PARTS': '/sheet_metal_parts'
+      'SHEET METAL PARTS AND FOOT REST': '/sheet_metal_parts',
+      'DEEPDRAWN BOXES' : '/deepdrawn_boxes'
     },
     'MANUFACTURING & LOCATIONS': {
       'CAPABILITIES': '/capabilities',

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Fuel, Factory, Calendar, Award } from 'lucide-react';
-import FuelT from '../Public/achievement section/haridwar.png';
+import FuelT from '../Public/achievement section/office.gif';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -70,7 +70,7 @@ const AchievementSection = () => {
                 <div className="flex items-center gap-4">
                   <Factory className="h-8 w-8 text-[#00adef]" />
                   <div>
-                    <div className="text-3xl font-bold text-gray-800">5+</div>
+                    <div className="text-3xl font-bold text-gray-800">5</div>
                     <div className="text-sm text-gray-600">Production Plants</div>
                   </div>
                 </div>
@@ -117,7 +117,7 @@ const AchievementSection = () => {
                 <div className="flex items-center gap-3">
                   <Fuel className="h-6 w-6 text-[#00adef]" />
                   <div>
-                    <div className="text-sm font-semibold text-gray-800">Est. 1991</div>
+                    <div className="text-sm font-semibold text-gray-800">Est. 1990</div>
                     <div className="text-xs text-gray-600">Pioneers in Automotive Manufacturing</div>
                   </div>
                 </div>

@@ -7,6 +7,12 @@ import RaychemLogo from '../Public/logos/raychem.png';
 import CIEIndiaLogo from '../Public/logos/cie-india2.png';
 import MahindraTracktors from '../Public/logos/Tractors.png';
 import MahindraTrucks from '../Public/logos/Truck-Bus.png';
+import eicher from '../Public/logos/Eicher.png';
+import kirloskar from '../Public/logos/Kirloskar.svg';
+import JBM from '../Public/logos/JBM.png';
+import hyva from '../Public/logos/hyva.png';
+import pinnacle from '../Public/logos/Pinnacle-logo.png';
+import sonnax from '../Public/logos/Sonnax.png';
 
 const Customers = () => {
   const customers = [
@@ -34,6 +40,31 @@ const Customers = () => {
       //name: 'Mahindra Trucks & Buses', 
       logo: MahindraTrucks,
     },
+    { 
+      
+      logo: eicher,
+    },
+    { 
+     
+      logo: kirloskar,
+    },
+    { 
+      
+      logo: JBM,
+    },
+    { 
+     
+      logo: hyva,
+    },
+    { 
+      
+      logo: pinnacle,
+    },
+    { 
+      
+      logo: sonnax,
+    },
+   
   ];
 
   const certifications = [

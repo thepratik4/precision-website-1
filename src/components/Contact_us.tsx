@@ -4,8 +4,9 @@ import { Mail, Phone, MapPin, Globe, Clock } from 'lucide-react';
 // Image imports
 import imgAmbad1 from '../Public/locations/ambad1.jpg';
 import imgAmbad2 from '../Public/locations/ambad2.jpg';
+import satpur from '../Public/locations/satpur.png';
 import imgHaridwar from '../Public/locations/haridwar.png';
-import imgChakan from '../Public/locations/Chakan.png';
+import imgChakan from '../Public/locations/chakan.jpg';
 
 interface Location {
   name: string;
@@ -23,16 +24,16 @@ interface Plant {
 
 const locations: Location[] = [
   {
-    name: "Precision Auto Industries",
-    address: "H-46, MIDC Ambad, Nashik, Maharashtra 422010",
+    name: "PRECISION AUTO INDUSTRIES",
+    address: "MIDC Ambad Industrial Area, Nashik, Maharashtra",
     phone: "02594233409",
     image: imgAmbad1,
   },
   {
-    name: "Precision Forging & Stampings",
-    address: "Plot No. 25, 1/1, Satpur MIDC Rd, MIDC, Satpur Colony, Nashik, Maharashtra 422007",
+    name: "GENEXT PRECISION AUTO TECH PV.LTD",
+    address: "MIDC Satpur Industrial Area, Nashik, Maharashtra",
     phone: "02532307081",
-    image: imgAmbad2,
+    image: satpur,
   },
   {
     name: "Haridwar Precision Auto Pvt ltd",
@@ -42,7 +43,7 @@ const locations: Location[] = [
   },
   {
     name: "PRECISION AUTO INDUSTRIES PVT. LTD.",
-    address: "F129, AMBAD, NASHIK.",
+    address: "MIDC Ambad Industrial Estate, Nashik, Maharashtra",
     phone: "02536629601",
     image: imgAmbad2,
   },

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { Battery, BatteryCharging, Shield, Zap, Gauge } from 'lucide-react';
-import treo from '../Public/battery box/treo_ev.jpg';
+import treo from '../Public/battery box/treo_ev.png';
 
 const Battery_boxes = () => {
   const heroRef = useRef(null);

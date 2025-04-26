@@ -4,15 +4,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import img1 from '../Public/hero section/thar-night4.jpeg';
 import img2 from '../Public/hero section/roboticwelding.webp'
 import img3 from '../Public/hero section/scroller.png'
-import img4 from '../Public/hero section/trees.jpg'
+import img4 from '../Public/hero section/solar.jpg'
 const Hero = () => {
   const slides = [
     {
       id: 1,
-      title: "Precision Engineering",
+      title: "Precision Auto group",
       subtitle: "For Automotive Excellence",
       description:
-        "Leading manufacturer of fuel tanks and sheet metal components, delivering quality and innovation to the automotive industry.",
+        "Leading manufacturer of fuel tanks and sheet metal components,foot step assemble delivering quality and innovation to the automotive industry.",
       image: img1,
     },
     {

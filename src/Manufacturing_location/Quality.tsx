@@ -3,8 +3,8 @@ import { Award, BookOpen, TreePine, Gauge } from 'lucide-react';
 
 const certifications = [
   {
-    title: 'ISO 9001:2015',
-    description: 'Quality Management System certification ensuring highest standards in manufacturing',
+    title: 'ISO 14001:2015',
+    description: 'International standard for environmental management systems.',
     icon: <Award className="w-6 h-6 text-[#00adef]" />
   },
   {

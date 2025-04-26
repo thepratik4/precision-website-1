@@ -2,8 +2,8 @@ import React from 'react';
 import { MapPin, Factory, Truck } from 'lucide-react';
 import nashik1 from '../Public/locations/ambad1.jpg';
 import nashik2 from '../Public/locations/ambad2.jpg';
-import genext from '../Public/locations/satpur.webp';
-import pune from '../Public/locations/Chakan.png';
+import genext from '../Public/locations/satpur.png';
+import pune from '../Public/locations/satpur.png';
 import haridwar from '../Public/locations/haridwar.png';
 
 const locations = [

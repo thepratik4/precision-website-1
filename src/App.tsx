@@ -17,6 +17,7 @@ import Certification from './About_us/Certification';
 import Fuel_tanks from './Products_Services/Fuel_tanks';
 import Battery_boxes from './Products_Services/Battery_boxes';
 import Sheet_metal_parts from './Products_Services/Sheet_metal_parts';
+import Deepdrawn_boxes from './Products_Services/Deepdrawn_boxes';
 
 import Capabilities from './Manufacturing_location/Capabilities';
 import Location from './Manufacturing_location/Location';
@@ -52,6 +53,7 @@ function App() {
           <Route path="/fuel_tanks" element={<Fuel_tanks/>}/>
           <Route path="/battery_boxes" element={<Battery_boxes/>}/>
           <Route path="/sheet_metal_parts" element={<Sheet_metal_parts/>}/>
+          <Route path="/deepdrawn_boxes" element={<Deepdrawn_boxes/>}/>
 
           <Route path="/capabilities" element={<Capabilities/>}/>
           <Route path="/quality" element={<Quality/>}/>

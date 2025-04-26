@@ -1,23 +1,25 @@
 import React from 'react';
 import { Factory, PenTool as Tool, Wrench, Notebook as Robot } from 'lucide-react';
-
+import img1 from '../Public/history/assembly.png'
+import img2 from '../Public/history/pressshot2024.jpg'
+import img3 from '../Public/history/hydraulic_press.jpg'
 const capabilities = [
   {
     title: 'Fuel Tank Assembly',
     icon: <Factory className="w-8 h-8 text-[#00adef]" />,
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800',
+    image: img1,
     description: 'State-of-the-art manufacturing facility for fuel tank assemblies'
   },
   {
     title: 'Press Shop Operations',
     icon: <Tool className="w-8 h-8 text-[#00adef]" />,
-    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    image: img2,
     description: 'Advanced press shop with high-precision equipment'
   },
   {
     title: 'Hydraulic Systems',
     icon: <Wrench className="w-8 h-8 text-[#00adef]" />,
-    image: 'https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&q=80&w=800',
+    image: img3,
     description: 'Specialized hydraulic press operations for complex components'
   },
   {

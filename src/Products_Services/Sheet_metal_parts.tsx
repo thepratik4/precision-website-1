@@ -6,7 +6,7 @@ import sheet3 from '../Public/sheets/sheet3.png';
 import sheet4 from '../Public/sheets/sheet4.png';
 import sheet5 from '../Public/sheets/sheet5.png';
 import sheet6 from '../Public/sheets/sheet6.png';
-import sheet7 from '../Public/sheets/sheet7.png';
+import sheet7 from '../Public/history/bolerofootrest.png';
 import sheet8 from '../Public/sheets/sheet8.png';
 import sheet9 from '../Public/sheets/sheet9.png';
 
@@ -48,10 +48,10 @@ const metalPartsData = [
     category: "Enclosures"
   },
   {
-    title: "Mounting Panels",
+    title: "Bolero Foot rest",
     image: sheet7,
-    description: "Reliable mounting bases for control systems",
-    category: "Panels"
+    description: "Reliable foot rest for Bolero",
+    category: "Foot rest"
   },
   {
     title: "Pipes with Mounting Tabs",
