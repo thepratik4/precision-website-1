@@ -1,27 +1,27 @@
 import React, { useRef, useEffect } from 'react';
 import { Cog, Wrench, Box } from 'lucide-react';
 import sheet1 from '../Public/sheets/sheet1.png';
-import sheet2 from '../Public/sheets/sheet2.png';
+import sheet2 from '../Public/sheets/sheet 2.jpg';
 import sheet3 from '../Public/sheets/sheet3.png';
 import sheet4 from '../Public/sheets/sheet4.png';
 import sheet5 from '../Public/sheets/sheet5.png';
 import sheet6 from '../Public/sheets/sheet6.png';
 import sheet7 from '../Public/history/bolerofootrest.png';
-import sheet8 from '../Public/sheets/sheet8.png';
+import sheet8 from '../Public/sheets/sheet8.jpg';
 import sheet9 from '../Public/sheets/sheet9.png';
 
 const metalPartsData = [
   {
-    title: "Side Steps / Foot Boards / Rock Sliders",
+    title: "Side foot steps",
     image: sheet1,
     description: "Precision-engineered distribution solutions",
-    category: "Distribution"
+    
   },
   {
-    title: "Side Steps / Foot Boards / Rock Sliders",
+    title: "stamping parts ",
     image: sheet2,
-    description: "Heavy-duty industrial grade footsteps",
-    category: "Footsteps"
+    description: "Heavy-duty industrial grade parts",
+    category: "parts"
   },
   {
     title: "Mini Steps and Guard Plate",
@@ -30,22 +30,22 @@ const metalPartsData = [
     category: "Tubular"
   },
   {
-    title: "Pipes with Mounting Tabs",
+    title: "Tubular parts",
     image: sheet4,
     description: "High-precision sheet metal components",
-    category: "Precision"
+    
   },
   {
-    title: "Sheet Metal Brackets and Covers",
+    title: "stamping parts",
     image: sheet5,
     description: "Vehicle-specific mounting solutions",
-    category: "Automotive"
+    category: ""
   },
   {
-    title: "Custom Enclosures",
+    title: "vacuum reservoir",
     image: sheet6,
     description: "Tailored enclosure manufacturing",
-    category: "Enclosures"
+    category:  ""
   },
   {
     title: "Bolero Foot rest",
@@ -54,16 +54,17 @@ const metalPartsData = [
     category: "Foot rest"
   },
   {
-    title: "Pipes with Mounting Tabs",
+    title: "stamping parts",
     image: sheet8,
-    description: "Pipes with Mounting Tabs",
-    category: "Covers"
+    description: "Reliable stamping parts",
+    category: ""
   },
+
   {
-    title: "Ventilation Ducts",
+    title: " stamping parts ",
     image: sheet9,
     description: "Optimized airflow components for industry",
-    category: "Ventilation"
+    category: "stamping"
   }
 ];
 

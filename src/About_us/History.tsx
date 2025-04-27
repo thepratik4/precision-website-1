@@ -10,7 +10,7 @@ import imgScorpio2002 from '../Public/history/scorpio2002.png';
 import imgISO16949 from '../Public/history/ISO-16949.jpg';
 import imgMahindra2006 from '../Public/history/mahindra2006.png';
 import imgXylo from '../Public/history/xylo.png';
-import imgOffice from '../Public/history/office.png';
+import imgOffice from '../Public/locations/chakan.jpg';
 import imgHaridwar from '../Public/locations/haridwar.png';
 import img2014 from '../Public/history/2014.jpg';
 import imgISO14000 from '../Public/history/iso14000.png';
@@ -30,8 +30,8 @@ const statsVariants = {
 
 const History = () => {
   const timelineEvents = [
-    { year: "1995", text: "Established with hydraulic press technology, serving automotive OEMs", image: imgHydraulicPress },
-    { year: "1998", text: "Supplied first major order to Tata Motors for commercial vehicles", image: imgArmada },
+    { year: "1991", text: "Established with hydraulic press technology, serving automotive OEMs", image: imgHydraulicPress },
+    { year: "1994-98", text: "supplied trimmedseats for CJ500, Commander, Armada & marshal models", image: imgArmada },
     { year: 1996, text: "Initiated in-house manufacturing and supply of deep-drawn fuel tanks, offering a competitive advantage through a 10% price reduction compared to existing suppliers based in Mumbai and Baroda." },
     { year: 2002, text: "Successfully developed Fuel Tank Assay & seat frames for Scorpio", image: imgScorpio2002 },
     { year: 2004, text: "Implemented ISO TS 16949 certification", image: imgISO16949 },

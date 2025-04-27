@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
-import { Mail, Phone, Clock, User, Building, PhoneCall } from 'lucide-react';
+import { Mail, PhoneCall, Clock, User, Building } from 'lucide-react';
 
-const ContactForm = () => {
+interface ContactPerson {
+  name: string;
+  title: string;
+  phone: string;
+  email: string;
+}
+
+const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -13,64 +20,57 @@ const ContactForm = () => {
 
   const [submitted, setSubmitted] = useState(false);
 
-  interface ContactPerson {
-    name: string;
-    title: string;
-    phone: string;
-    email: string;
-  }
-
   const contactPersons: ContactPerson[] = [
     {
-      name: "B M Khairnar",
-      title: "Managing Director",
-      phone: "9822080400",
-      email: "bmkhairnar@precision.co.in",
+      name: 'B M Khairnar',
+      title: 'Managing Director',
+      phone: '9822080400',
+      email: 'bmkhairnar@precision.co.in',
     },
     {
-      name: "S C Gurule",
-      title: "Senior Executive",
-      phone: "9822750023",
-      email: "scgurule@precision.co.in",
+      name: 'Kunal Khairnar',
+      title: 'Director',
+      phone: '9151617171',
+      email: 'kbkhairnar@precision.co.in',
+    },
+    {
+      name: 'S C Gurule',
+      title: 'Plant Manager',
+      phone: '9822750023',
+      email: 'scgurule@precision.co.in',
     },
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
-    fetch("http://localhost:5000/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => response.text())
-      .then((data) => {
-        console.log('Response from server:', data);
-        setSubmitted(true);
-        setFormData({
-          name: '',
-          email: '',
-          company: '',
-          phone: '',
-          subject: '',
-          message: '',
-        });
-        setTimeout(() => setSubmitted(false), 5000);
-      })
-      .catch((error) => {
-        console.error('Error sending the message:', error);
+    try {
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       });
+      const data = await response.text();
+      console.log('Response from server:', data);
+      setSubmitted(true);
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        phone: '',
+        subject: '',
+        message: '',
+      });
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch (error) {
+      console.error('Error sending the message:', error);
+    }
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   return (
@@ -85,55 +85,59 @@ const ContactForm = () => {
         </div>
       </div>
 
-      {/* Contacts Grid */}
+      {/* Contacts Grid Section */}
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Key Contacts</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {contactPersons.map((person, index) => (
-            <div 
-              key={index}
-              className="bg-white rounded-xl shadow-lg p-8 transform hover:scale-[1.02] transition-all duration-300 group"
+        <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+          Key Contacts
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {contactPersons.map((person, idx) => (
+            <div
+              key={idx}
+              className="bg-white rounded-xl shadow-lg p-6 transform hover:scale-[1.02] transition-all duration-300 group"
             >
-              <div className="flex items-start mb-6">
-                <div className="bg-blue-100 p-4 rounded-lg">
-                  <User className="w-8 h-8 text-blue-600" />
+              <div className="flex items-start mb-4">
+                <div className="bg-blue-100 p-3 rounded-lg">
+                  <User className="w-6 h-6 text-blue-600" />
                 </div>
-                <div className="ml-6">
-                  <h3 className="text-2xl font-bold text-gray-800">{person.name}</h3>
+                <div className="ml-4">
+                  <h3 className="text-xl font-bold text-gray-800">{person.name}</h3>
                   {person.title && (
-                    <p className="text-sm text-blue-600 font-semibold mt-1">{person.title}</p>
+                    <p className="text-xs text-blue-600 font-semibold mt-1">
+                      {person.title}
+                    </p>
                   )}
                 </div>
               </div>
-              
-              <div className="space-y-4">
+
+              <div className="space-y-3">
                 <div className="flex items-center">
                   <div className="bg-blue-50 p-2 rounded-lg">
-                    <PhoneCall className="w-6 h-6 text-blue-600" />
+                    <PhoneCall className="w-5 h-5 text-blue-600" />
                   </div>
-                  <a 
-                    href={`tel:${person.phone}`} 
-                    className="ml-4 text-gray-700 hover:text-blue-600 text-lg flex items-center group"
+                  <a
+                    href={`tel:${person.phone}`}
+                    className="ml-3 text-gray-700 hover:text-blue-600 text-base flex items-center group"
                   >
                     {person.phone}
-                    <span className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity text-sm">
                       ↗
                     </span>
                   </a>
                 </div>
-                
+
                 <div className="flex items-center">
                   <div className="bg-blue-50 p-2 rounded-lg">
-                    <Mail className="w-6 h-6 text-blue-600" />
+                    <Mail className="w-5 h-5 text-blue-600" />
                   </div>
-                  <a 
-                    href={`https://mail.google.com/mail/?view=cm&to=${person.email}`} 
+                  <a
+                    href={`https://mail.google.com/mail/?view=cm&to=${person.email}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="ml-4 text-gray-700 hover:text-blue-600 text-lg flex items-center group"
+                    className="ml-3 text-gray-700 hover:text-blue-600 text-base flex items-center group"
                   >
                     {person.email}
-                    <span className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity text-sm">
                       ↗
                     </span>
                   </a>
@@ -151,7 +155,7 @@ const ContactForm = () => {
             {/* Information Side */}
             <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-12 text-white">
               <h2 className="text-3xl font-bold mb-8">Get in Touch</h2>
-              
+
               <div className="space-y-8">
                 <div className="flex items-start">
                   <div className="bg-white/10 p-3 rounded-lg">
@@ -181,14 +185,13 @@ const ContactForm = () => {
                   </div>
                   <div className="ml-6">
                     <h3 className="text-xl font-semibold mb-2">General Inquiry</h3>
-                    <a 
-                      href="https://mail.google.com/mail/?view=cm&to=bmkhairnar@precision.co.in" 
+                    <a
+                      href="https://mail.google.com/mail/?view=cm&to=bmkhairnar@precision.co.in"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-blue-100 hover:text-white transition-colors"
                     >
                       bmkhairnar@precision.co.in
-
                     </a>
                   </div>
                 </div>
@@ -214,7 +217,6 @@ const ContactForm = () => {
                       required
                     />
                   </div>
-
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                       Email *
@@ -245,7 +247,6 @@ const ContactForm = () => {
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
                     />
                   </div>
-
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                       Phone Number

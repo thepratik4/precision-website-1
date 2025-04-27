@@ -117,13 +117,13 @@ const Deepdrawn_boxes = () => {
               <div className="bg-gray-800/50 backdrop-blur-xl rounded-3xl p-10 shadow-[0_10px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_0_60px_rgba(0,173,239,0.3)] transition-all duration-500 transform hover:-translate-y-2 border border-gray-700/50">
                 <h2 className="text-5xl font-bold mb-8 relative">
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00adef] to-white">
-                    11kV Conversion Box
+                    11KV Conversion Box
                   </span>
                   <div className="h-1 w-20 bg-[#00adef] mt-4 rounded-full" />
                 </h2>
                 <div className="space-y-8">
                   <p className="text-xl leading-relaxed text-gray-300">
-                    Specifically engineered for converting 11kV overhead lines to underground cables, these boxes feature advanced safety mechanisms and clear warning systems. The design incorporates international safety standards and local utility requirements.
+                    Specifically engineered for converting 11KV overhead lines to underground cables, these boxes feature advanced safety mechanisms and clear warning systems. The design incorporates international safety standards and local utility requirements.
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="bg-gray-800/30 p-6 rounded-2xl flex items-center gap-4 hover:bg-[#00adef]/10 transition-colors duration-300 group border border-gray-700/50">
@@ -131,7 +131,7 @@ const Deepdrawn_boxes = () => {
                         <Zap className="h-6 w-6 text-[#00adef]" />
                       </div>
                       <span className="text-lg font-medium text-gray-300 group-hover:text-[#00adef] transition-colors duration-300">
-                        11kV Rating
+                        11KV Rating
                       </span>
                     </div>
                     <div className="bg-gray-800/30 p-6 rounded-2xl flex items-center gap-4 hover:bg-[#00adef]/10 transition-colors duration-300 group border border-gray-700/50">
@@ -165,7 +165,7 @@ const Deepdrawn_boxes = () => {
                     <Bolt className="h-8 w-8 text-[#00adef]" />
                   </div>
                   <h3 className="text-xl font-bold mb-4 text-white group-hover:text-[#00adef] transition-colors duration-300">Voltage Protection</h3>
-                  <p className="text-gray-300">Engineered to safely handle 11kV power distribution with comprehensive insulation and grounding systems for maximum safety.</p>
+                  <p className="text-gray-300">Engineered to safely handle 11KV power distribution with comprehensive insulation and grounding systems for maximum safety.</p>
                 </div>
                 <div className="bg-gray-800/30 p-8 rounded-2xl hover:bg-[#00adef]/10 transition-all duration-300 group border border-gray-700/50 transform hover:-translate-y-2">
                   <div className="p-4 rounded-xl bg-[#00adef]/10 group-hover:bg-[#00adef]/20 transition-colors duration-300 w-fit mb-6">
