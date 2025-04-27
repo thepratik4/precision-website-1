@@ -1,22 +1,24 @@
 import React from 'react';
-
+import fuelt from '../Public/fuel tank/Mahindra_thar.png'
+import battery from '../Public/battery box/treo_ev.png'
+import sheet from '../Public/sheets/sheet1.png'
 const ProductGallery = () => {
   // Products array with product information
   const products = [
     {
       name: 'Fuel Tanks',
       description: 'High-quality fuel tanks with advanced safety features',
-      image: 'https://images.unsplash.com/photo-1705601010126-5374e1219675?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGZ1ZWwlMjB0YW5rfGVufDB8fDB8fHww',
+      image: fuelt,
     },
     {
       name: 'Battery Boxes',
       description: 'Durable battery boxes designed for optimal performance',
-      image: 'https://images.unsplash.com/photo-1653933686284-8414eb9ebdf4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      image: battery,
     },
     {
       name: 'Sheet Metal Components',
       description: 'Precision-engineered sheet metal parts',
-      image: 'https://images.unsplash.com/photo-1697698532602-ccf880036281?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      image: sheet,
     },
   ];
 
