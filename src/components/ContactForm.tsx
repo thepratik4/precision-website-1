@@ -20,10 +20,17 @@ const ContactForm = () => {
                 <Mail className="h-6 w-6 text-blue-600 mt-1 flex-shrink-0" />
                 <div className="ml-3">
                   <p className="text-sm font-medium text-gray-900">Email</p>
-                  <p className="text-gray-500">info@precisionauto.com</p>
+                  <a 
+                    href="https://mail.google.com/mail/?view=cm&to=bmkhairnar@precision.co.in" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-gray-500 hover:text-blue-600 transition-colors"
+                  >
+                    bmkhairnar@precision.co.in
+                  </a>
                 </div>
               </div>
-
+              
               {/* Business Hours */}
               <div className="flex items-start">
                 <Clock className="h-6 w-6 text-blue-600 mt-1 flex-shrink-0" />
@@ -70,7 +77,6 @@ const ContactForm = () => {
               <p className="text-sm text-gray-500 mt-4">
                 For direct inquiries, please use our email.
                 <br />
-                
               </p>
             </div>
           </div>

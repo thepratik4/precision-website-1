@@ -1,98 +1,39 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Globe, Clock } from 'lucide-react';
+import { Mail, Phone, Clock, User, Building, PhoneCall } from 'lucide-react';
 
-// Image imports
-import imgAmbad1 from '../Public/locations/ambad1.jpg';
-import imgAmbad2 from '../Public/locations/ambad2.jpg';
-import satpur from '../Public/locations/satpur.png';
-import imgHaridwar from '../Public/locations/haridwar.png';
-import imgChakan from '../Public/locations/chakan.jpg';
-
-interface Location {
-  name: string;
-  address: string;  
-  phone: string;
-  image: string;
-}
-
-interface Plant {
-  id: string;
-  name: string;
-  location: string;
-  address: string;
-}
-
-const locations: Location[] = [
-  {
-    name: "PRECISION AUTO INDUSTRIES",
-    address: "MIDC Ambad Industrial Area, Nashik, Maharashtra",
-    phone: "02594233409",
-    image: imgAmbad1,
-  },
-  {
-    name: "GENEXT PRECISION AUTO TECH PV.LTD",
-    address: "MIDC Satpur Industrial Area, Nashik, Maharashtra",
-    phone: "02532307081",
-    image: satpur,
-  },
-  {
-    name: "Haridwar Precision Auto Pvt ltd",
-    address: "Plot No.6, Setor 4, SIDCUL, Uttarakhand 249403",
-    phone: "01334239130",
-    image: imgHaridwar,
-  },
-  {
-    name: "PRECISION AUTO INDUSTRIES PVT. LTD.",
-    address: "MIDC Ambad Industrial Estate, Nashik, Maharashtra",
-    phone: "02536629601",
-    image: imgAmbad2,
-  },
-  {
-    name: "PRECISION AUTO COMPONENTS PVT. LTD.",
-    address: "CHAKAN, PUNE.",
-    phone: "",
-    image: imgChakan,
-  },
-];
-
-const plants: Plant[] = [
-  {
-    id: 'ambad',
-    name: 'PRECISION AUTO INDUSTRIES PVT.LTD',
-    location: 'AMBAD, NASHIK',
-    address: 'MIDC Ambad Industrial Area, Nashik, Maharashtra',
-  },
-  {
-    id: 'satpur',
-    name: 'GENEXT PRECISION AUTO TECH PVT.LTD',
-    location: 'SATPUR, NASHIK',
-    address: 'MIDC Satpur Industrial Area, Nashik, Maharashtra',
-  },
-  {
-    id: 'chakan',
-    name: 'PRECISION AUTO COMPONENTS PVT.LTD',
-    location: 'CHAKAN, PUNE',
-    address: 'Chakan Industrial Area, Pune, Maharashtra',
-  },
-  {
-    id: 'haridwar',
-    name: 'PRECISION AUTO PVT.LTD',
-    location: 'HARIDWAR',
-    address: 'Industrial Area, Haridwar, Uttarakhand',
-  },
-];
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
     phone: '',
-    plant: '',
     subject: '',
     message: '',
   });
 
   const [submitted, setSubmitted] = useState(false);
+
+  interface ContactPerson {
+    name: string;
+    title: string;
+    phone: string;
+    email: string;
+  }
+
+  const contactPersons: ContactPerson[] = [
+    {
+      name: "B M Khairnar",
+      title: "Managing Director",
+      phone: "9822080400",
+      email: "bmkhairnar@precision.co.in",
+    },
+    {
+      name: "S C Gurule",
+      title: "Senior Executive",
+      phone: "9822750023",
+      email: "scgurule@precision.co.in",
+    },
+  ];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -104,7 +45,7 @@ const ContactForm = () => {
       },
       body: JSON.stringify(formData),
     })
-      .then((response) => response.text()) // Using text() since backend sends plain text
+      .then((response) => response.text())
       .then((data) => {
         console.log('Response from server:', data);
         setSubmitted(true);
@@ -113,7 +54,6 @@ const ContactForm = () => {
           email: '',
           company: '',
           phone: '',
-          plant: '',
           subject: '',
           message: '',
         });
@@ -134,50 +74,69 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-800 py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl font-bold text-white mb-6">Contact Us</h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Get in touch with our team across India. We're here to help with your precision engineering needs.
+            Reach out to our key contacts or send us a message directly. We're here to help with your precision engineering needs.
           </p>
         </div>
       </div>
 
-      {/* Locations Grid */}
+      {/* Contacts Grid */}
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Our Locations</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {locations.map((location, index) => (
+        <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Key Contacts</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {contactPersons.map((person, index) => (
             <div 
               key={index}
-              className="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300"
+              className="bg-white rounded-xl shadow-lg p-8 transform hover:scale-[1.02] transition-all duration-300 group"
             >
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src={location.image} 
-                  alt={location.name}
-                  className="w-full h-full object-cover"
-                />
+              <div className="flex items-start mb-6">
+                <div className="bg-blue-100 p-4 rounded-lg">
+                  <User className="w-8 h-8 text-blue-600" />
+                </div>
+                <div className="ml-6">
+                  <h3 className="text-2xl font-bold text-gray-800">{person.name}</h3>
+                  {person.title && (
+                    <p className="text-sm text-blue-600 font-semibold mt-1">{person.title}</p>
+                  )}
+                </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">{location.name}</h3>
+              
+              <div className="space-y-4">
+                <div className="flex items-center">
+                  <div className="bg-blue-50 p-2 rounded-lg">
+                    <PhoneCall className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <a 
+                    href={`tel:${person.phone}`} 
+                    className="ml-4 text-gray-700 hover:text-blue-600 text-lg flex items-center group"
+                  >
+                    {person.phone}
+                    <span className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                      ↗
+                    </span>
+                  </a>
+                </div>
                 
-                <div className="space-y-3">
-                  <div className="flex items-start">
-                    <MapPin className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
-                    <p className="ml-3 text-gray-600">{location.address}</p>
+                <div className="flex items-center">
+                  <div className="bg-blue-50 p-2 rounded-lg">
+                    <Mail className="w-6 h-6 text-blue-600" />
                   </div>
-                  
-                  <div className="flex items-center">
-                    <Phone className="w-5 h-5 text-blue-600" />
-                    <a href={`tel:${location.phone}`} className="ml-3 text-gray-600 hover:text-blue-600">
-                      {location.phone}
-                    </a>
-                  </div>
-                  
-                  
+                  <a 
+                    href={`https://mail.google.com/mail/?view=cm&to=${person.email}`} 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ml-4 text-gray-700 hover:text-blue-600 text-lg flex items-center group"
+                  >
+                    {person.email}
+                    <span className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                      ↗
+                    </span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -186,171 +145,168 @@ const ContactForm = () => {
       </div>
 
       {/* Contact Form Section */}
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="space-y-8">
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h2>
-              <div className="space-y-6">
-                <div className="flex items-center">
-                  <Mail className="h-6 w-6 text-blue-600" />
-                  <div className="ml-4">
-                    <p className="text-sm font-medium text-gray-900">Email</p>
-                    <p className="text-gray-600">info@precisionauto.com</p>
+      <div className="max-w-7xl mx-auto px-4 pb-16">
+        <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Information Side */}
+            <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-12 text-white">
+              <h2 className="text-3xl font-bold mb-8">Get in Touch</h2>
+              
+              <div className="space-y-8">
+                <div className="flex items-start">
+                  <div className="bg-white/10 p-3 rounded-lg">
+                    <Clock className="w-8 h-8" />
+                  </div>
+                  <div className="ml-6">
+                    <h3 className="text-xl font-semibold mb-2">Working Hours</h3>
+                    <p className="text-blue-100">Monday - Friday: 9:00 AM – 6:00 PM</p>
+                    <p className="text-blue-100">Saturday & Sunday: Closed</p>
                   </div>
                 </div>
-                <div className="flex items-center">
-                  <Clock className="h-6 w-6 text-blue-600" />
-                  <div className="ml-4">
-                    <p className="text-sm font-medium text-gray-900">Business Hours</p>
-                    <p className="text-gray-600">Monday to Friday: 9:00 AM – 6:00 PM</p>
-                    <p className="text-gray-600">Saturday: Closed</p>
-                    <p className="text-gray-600">Sunday: 9:00 AM – 6:00 PM
 
-</p>
+                <div className="flex items-start">
+                  <div className="bg-white/10 p-3 rounded-lg">
+                    <Building className="w-8 h-8" />
+                  </div>
+                  <div className="ml-6">
+                    <h3 className="text-xl font-semibold mb-2">Headquarters</h3>
+                    <p className="text-blue-100">Precision Auto Industries</p>
+                    <p className="text-blue-100">Nashik, Maharashtra</p>
                   </div>
                 </div>
-                <div className="flex items-center">
-                  <Globe className="h-6 w-6 text-blue-600" />
-                  <div className="ml-4">
-                    <p className="text-sm font-medium text-gray-900">Global Presence</p>
-                    <p className="text-gray-600">5 Manufacturing Plants across India</p>
+
+                <div className="flex items-start">
+                  <div className="bg-white/10 p-3 rounded-lg">
+                    <Mail className="w-8 h-8" />
+                  </div>
+                  <div className="ml-6">
+                    <h3 className="text-xl font-semibold mb-2">General Inquiry</h3>
+                    <a 
+                      href="https://mail.google.com/mail/?view=cm&to=bmkhairnar@precision.co.in" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-100 hover:text-white transition-colors"
+                    >
+                      bmkhairnar@precision.co.in
+
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Form Side */}
+            <div className="p-12">
+              <h2 className="text-3xl font-bold text-gray-800 mb-8">Send us a Message</h2>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      Name *
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+                      Company
+                    </label>
+                    <input
+                      type="text"
+                      name="company"
+                      id="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      id="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
+                    />
+                  </div>
+                </div>
+
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                    Name *
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                    Subject *
                   </label>
                   <input
                     type="text"
-                    name="name"
-                    id="name"
-                    value={formData.name}
+                    name="subject"
+                    id="subject"
+                    value={formData.subject}
                     onChange={handleChange}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
                     required
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                    Email *
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    Message *
                   </label>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    value={formData.email}
+                  <textarea
+                    name="message"
+                    id="message"
+                    rows={4}
+                    value={formData.message}
                     onChange={handleChange}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
                     required
                   />
                 </div>
-              </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-gray-700">
-                    Company
-                  </label>
-                  <input
-                    type="text"
-                    name="company"
-                    id="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    id="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="plant" className="block text-sm font-medium text-gray-700">
-                  Preferred Plant Location
-                </label>
-                <select
-                  name="plant"
-                  id="plant"
-                  value={formData.plant}
-                  onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                <button
+                  type="submit"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all transform hover:scale-[1.02]"
                 >
-                  <option value="">Select a plant (optional)</option>
-                  {plants.map((plant) => (
-                    <option key={plant.id} value={plant.id}>
-                      {plant.name} - {plant.location}
-                    </option>
-                  ))}
-                </select>
-              </div>
+                  Send Message
+                </button>
 
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700">
-                  Subject *
-                </label>
-                <input
-                  type="text"
-                  name="subject"
-                  id="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                  required
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                  Message *
-                </label>
-                <textarea
-                  name="message"
-                  id="message"
-                  rows={4}
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                  required
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
-              >
-                Send Message
-              </button>
-
-              {submitted && (
-                <div className="mt-4 p-4 bg-green-50 rounded-md">
-                  <p className="text-green-800 text-center">
-                    Thank you for your message! Our team will get back to you soon.
-                  </p>
-                </div>
-              )}
-            </form>
+                {submitted && (
+                  <div className="mt-4 p-4 bg-green-50 rounded-lg border border-green-200">
+                    <p className="text-green-700 text-center">
+                      Thank you for your message! We'll respond within 24 hours.
+                    </p>
+                  </div>
+                )}
+              </form>
+            </div>
           </div>
         </div>
       </div>
