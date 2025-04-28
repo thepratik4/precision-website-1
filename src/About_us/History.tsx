@@ -4,8 +4,9 @@ import { ArrowRight, ArrowLeft, Clock, Award, Target, Rocket } from 'lucide-reac
 import { motion } from 'framer-motion';
 
 // Image imports
-import imgHydraulicPress from '../Public/history/hydraulic_press.png';
+import imgHydraulicPress from '../Public/history/hydraulic_press.jpg';
 import imgArmada from '../Public/history/armada.avif';
+import imgfuel from '../Public/fuel tank/fuelassembly.png'
 import imgScorpio2002 from '../Public/history/scorpio2002.png';
 import imgISO16949 from '../Public/history/ISO-16949.jpg';
 import imgMahindra2006 from '../Public/history/mahindra2006.png';
@@ -19,7 +20,7 @@ import imgIATF2016 from '../Public/history/iatf2016.png';
 import imgBoleroFootrest from '../Public/history/bolerofootrest.png';
 import imgBatteryTreo from '../Public/history/batterytreo.png';
 import imgTharFuelTank from '../Public/fuel tank/Mahindra_thar.png';
-import imgPressShot2024 from '../Public/history/pressshot2024.jpg';
+import imgPressShot2024 from '../Public/history/hydraulic_press.png';
 import imgRoboticWelding from '../Public/history/roboticwelding.webp';
 import pressbreak from '../Public/history/pressbreak.png';
 // Stats animation variants (ensure this is defined or imported)
@@ -31,8 +32,8 @@ const statsVariants = {
 const History = () => {
   const timelineEvents = [
     { year: "1991", text: "Established with hydraulic press technology, serving automotive OEMs", image: imgHydraulicPress },
-    { year: "1994-98", text: "supplied trimmedseats for CJ500, Commander, Armada & marshal models", image: imgArmada },
-    { year: 1996, text: "Initiated in-house manufacturing and supply of deep-drawn fuel tanks, offering a competitive advantage through a 10% price reduction compared to existing suppliers based in Mumbai and Baroda." },
+    { year: "1994-98", text: "Supplied trimmedseats for CJ500, Commander, Armada & marshal models", image: imgArmada },
+    { year: 1996, text: "Initiated in-house manufacturing and supply of deep-drawn fuel tanks, offering a competitive advantage through a 10% price reduction compared to existing suppliers based in Mumbai and Baroda.", image: imgfuel },
     { year: 2002, text: "Successfully developed Fuel Tank Assay & seat frames for Scorpio", image: imgScorpio2002 },
     { year: 2004, text: "Implemented ISO TS 16949 certification", image: imgISO16949 },
     { year: 2006, text: "Implemented imported aluminum silicon coated steel for fuel tank assay, reduced warranty complaints to almost zero & enhanced brand image of Mahindra Vehicles", image: imgMahindra2006 },
@@ -212,7 +213,7 @@ const History = () => {
                           </div>
                         )}
                         <div className="flex-grow overflow-y-auto pr-1 custom-scrollbar">
-                          <p className="text-sm text-gray-700">{event.text}</p>
+                          <p className="text-base font-medium text-gray-700">{event.text}</p>
                         </div>
                       </motion.div>
                     </div>

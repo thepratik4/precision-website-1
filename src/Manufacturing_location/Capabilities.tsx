@@ -17,7 +17,7 @@ const capabilities = [
     description: 'Advanced press shop with high-precision equipment'
   },
   {
-    title: 'Hydraulic Systems',
+    title: 'Hydraulic Press',
     icon: <Wrench className="w-8 h-8 text-[#00adef]" />,
     image: img3,
     description: 'Specialized hydraulic press operations for complex components'
