@@ -10,14 +10,14 @@ const Hero = () => {
     {
       id: 1,
       title: "Precision Auto group",
-      subtitle: "For Automotive Excellence",
+      subtitle: "For Manufacturing Excellence",
       description:
         "Leading manufacturer of fuel tanks and sheet metal components,foot step assembly delivering quality and innovation to the automotive industry.",
       image: img1,
     },
     {
       id: 2,
-      title: "Innovation & Quality",
+      title: "Process Innovation & Quality",
       subtitle: "Setting New Standards",
       description:
         "State-of-the-art manufacturing facilities equipped with the latest technology for superior product quality.",

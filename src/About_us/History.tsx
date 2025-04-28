@@ -4,7 +4,7 @@ import { ArrowRight, ArrowLeft, Clock, Award, Target, Rocket } from 'lucide-reac
 import { motion } from 'framer-motion';
 
 // Image imports
-import imgHydraulicPress from '../Public/history/hydraulic_press.jpg';
+import imgHydraulicPress from '../Public/history/hydraulic_press.png';
 import imgArmada from '../Public/history/armada.avif';
 import imgScorpio2002 from '../Public/history/scorpio2002.png';
 import imgISO16949 from '../Public/history/ISO-16949.jpg';

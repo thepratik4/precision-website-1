@@ -115,7 +115,7 @@ const FuelTanks = () => {
             </div>
           </div>
           <h1 className="text-8xl font-bold mb-6 text-white tracking-tight">
-            Fuel Tank <span className="bg-gradient-to-r from-[#00adef] to-blue-600 text-transparent bg-clip-text">Solutions</span>
+            Fuel  <span className="bg-gradient-to-r from-[#00adef] to-blue-600 text-transparent bg-clip-text">Tank</span>
           </h1>
           <p className="text-2xl mb-12 text-gray-300 max-w-3xl mx-auto font-light">
             Premium fuel tank assemblies engineered for performance and durability

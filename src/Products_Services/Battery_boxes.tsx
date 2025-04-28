@@ -50,7 +50,7 @@ const Battery_boxes = () => {
           </div>
           
           <h1 className="text-8xl font-bold mb-6 text-white tracking-tight">
-            EV Battery <span className="bg-gradient-to-r from-[#00adef] to-blue-600 text-transparent bg-clip-text">Solutions</span>
+            EV Battery <span className="bg-gradient-to-r from-[#00adef] to-blue-600 text-transparent bg-clip-text">Box</span>
           </h1>
           
           <p className="text-2xl mb-12 text-gray-300 max-w-3xl mx-auto font-light">

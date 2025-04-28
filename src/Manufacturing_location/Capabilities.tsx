@@ -1,8 +1,8 @@
 import React from 'react';
 import { Factory, PenTool as Tool, Wrench, Notebook as Robot } from 'lucide-react';
-import img1 from '../Public/history/assembly.png'
+import img1 from '../Public/fuel tank/fuelassembly.png'
 import img2 from '../Public/history/pressshot2024.jpg'
-import img3 from '../Public/history/hydraulic_press.jpg'
+import img3 from '../Public/history/hydraulic_press.png'
 const capabilities = [
   {
     title: 'Fuel Tank Assembly',
